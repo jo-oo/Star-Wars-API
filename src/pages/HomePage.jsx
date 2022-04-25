@@ -2,6 +2,7 @@
 
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
 
 const HomePage = () => {
 	return (
