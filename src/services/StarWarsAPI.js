@@ -10,33 +10,29 @@
  import axios from 'axios'
 
  axios.defaults.baseURL = 'https://swapi.dev/api'
+ const BaseURL = 'https://swapi.dev/api'
  
  /**
   * Execute a HTTP GET request to an endpoint.
   * 
   */
-
+//Get all films
   const getFilms = async () => {
-	try {
-		const response = await axios.get('/films')
-
+		const response = await axios.get(`${BaseURL}/films`)
 		return response.data
+}
 
-	} catch (err) {
-		throw err.message
-	}
+//Get single film
+const getFilm = async (id) => {
+    const res = await axios.get(`${BaseURL}/films/${id}`)
+    return res
 }
 
 //get characters from API
 const getCharacters = async (page) => {
-	try {
 		const res = await axios.get(`/people/?page=${page}`)
 
 		return response.data
-
-	} catch (err) {
-		throw err.message
-	}
 }
 
  
@@ -57,6 +53,7 @@ const getCharacters = async (page) => {
 
  export default {
 	getFilms,
-	getCharacters,
+    getFilm,
+	getCharacters
 	//search,
 }
