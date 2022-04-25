@@ -1,7 +1,7 @@
 /**
  * Star Wars API service
  *
- * <https://swapi.dev/documentation>
+ * <'https://swapi.dev/api'>
  */
 
 //GET REQUESTS//
@@ -9,7 +9,7 @@
 
  import axios from 'axios'
 
- axios.defaults.baseURL = 'https://swapi.dev/api'
+ //axios.defaults.baseURL = 'https://swapi.dev/api'
  const BaseURL = 'https://swapi.dev/api'
  
  /**
@@ -24,16 +24,23 @@
 
 //Get single film
 const getFilm = async (id) => {
-    const res = await axios.get(`${BaseURL}/films/${id}`)
-    return res
+    const response = await axios.get(`${BaseURL}/films/${id}`)
+    return response.data
 }
 
 //get characters from API
-const getCharacters = async (page) => {
-		const res = await axios.get(`/people/?page=${page}`)
+const getCharacters = async () => {
+		const response = await axios.get(`${BaseURL}/characters`)
 
 		return response.data
 }
+
+//Get single character
+const getCharacter = async (id) => {
+    const response = await axios.get(`${BaseURL}/characters/${id}`)
+    return response.data
+}
+
 
  
 
@@ -54,6 +61,7 @@ const getCharacters = async (page) => {
  export default {
 	getFilms,
     getFilm,
-	getCharacters
+	getCharacters,
+    getCharacter,
 	//search,
 }
