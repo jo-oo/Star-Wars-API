@@ -17,8 +17,6 @@ const Navigation = () => {
 						<Nav.Link as={NavLink} end to="/search">Star Search</Nav.Link>
 						<Nav.Link as={NavLink} to="/characters" end>Characters</Nav.Link> {/*Vi klan använda NavLink för att highlighta bara när du är inne på den länken. Slriv "end" för att sluta lysa när fu inte ä inne på länken längre */}
 						<Nav.Link as={NavLink} to="/films" end>Films</Nav.Link>
-						<Nav.Link as={NavLink} to="/characters/films" end>x</Nav.Link>
-						<Nav.Link as={NavLink} to="/films/characters" end>x</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

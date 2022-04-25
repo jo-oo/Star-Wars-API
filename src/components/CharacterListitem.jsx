@@ -1,5 +1,5 @@
 //uppdaterar sidan så den länkar till den enskilda personen vi vill visas egna sida
-import { Link } from 'react-router-dom'
+/*import { Link } from 'react-router-dom'
 
 const Character = ({ character }) => {
 	return (
@@ -13,4 +13,4 @@ const Character = ({ character }) => {
 		</li>
 	)
 }
-
+*/
