@@ -1,4 +1,3 @@
-/*
 import { useEffect, useState, useRef } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -58,4 +57,3 @@ const SearchStarWars = () => {
 }
 
 export default SearchStarWars
-*/
