@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import StarWarsAPI from '../services/StarWarsAPI'
 import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
-//import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
+import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
 
 
 const FilmPage = () => {
@@ -57,12 +57,11 @@ const FilmPage = () => {
                             <Button variant="primary" as={Link} to={`/films/${film.episode_id}`}>More</Button>
                         </Card.Body>
 
-                        {characters.map((characters) => ( //mappar över films-array. finns det charactaers så skriver den ut följande
+                        {characters.map((characters) => ( 
                             <Col>
                                 <Card className="card">
-                                    <Card.Header as="h5">{characters.id}</Card.Header>
-
-                                    </Card>
+                                    <Card.Header>Character {`${getIdFromUrl(characters)}`}</Card.Header>
+							    </Card>
                             </Col>
         	            ))}		   
             		</Card>
