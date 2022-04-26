@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import StarWarsAPI from '../services/StarWarsAPI'
-import ListGroup from 'react-bootstrap/listgroup'
+//import ListGroup from 'react-bootstrap/listgroup'
 import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
 
 
 const FilmsPage = () => {
@@ -33,13 +34,17 @@ const FilmsPage = () => {
       	<h1>Films</h1>
 
       	{films && films.results.map((films) => ( //mappar över films-array. finns det charactaers så skriver den ut följande
-        	<Col>
+        	<Col key={films.episode_id}>
           		<Card className="card">
            			<Card.Header as="h5">{films.title}</Card.Header>
           				<Card.Body>
             				<Card.Text>Episode {films.episode_id} </Card.Text>
             				<Card.Text>Released {films.release_date} </Card.Text>
-              				<Button variant="primary" as={Link} to={`/films/${films.episode_id}`}>More</Button>
+              				<Card.Body>
+							  <Button variant="primary" as={Link} to={`/films/${getIdFromUrl(films.url)}`}>More</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
+							  </Card.Body>
+							 
+							  
            				</Card.Body>
             		</Card>
         	</Col>
