@@ -37,16 +37,15 @@ const FilmsPage = () => {
         	<Col key={films.episode_id}>
           		<Card className="card">
            			<Card.Header as="h5">{films.title}</Card.Header>
-          				<Card.Body>
-            				<Card.Text>Episode {films.episode_id} </Card.Text>
-            				<Card.Text>Released {films.release_date} </Card.Text>
-              				<Card.Body>
-							  <Button variant="primary" as={Link} to={`/films/${getIdFromUrl(films.url)}`}>More</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
-							  </Card.Body>
-							 
-							  
-           				</Card.Body>
-            		</Card>
+          			<Card.Body>
+            			<Card.Text>Episode {films.episode_id} </Card.Text>
+            			<Card.Text>Released {films.release_date} </Card.Text>
+						<Card.Text>{films.characters.length} Characters </Card.Text>
+						<Card.Body>
+							<Button variant="primary" as={Link} to={`/films/${getIdFromUrl(films.url)}`}>More info about the film</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
+						</Card.Body> 
+           			</Card.Body>
+            	</Card>
         	</Col>
         	))}
         </Row>
