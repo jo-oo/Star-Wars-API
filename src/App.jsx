@@ -6,7 +6,7 @@ import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 //import SearchStarWars from './pages/SearchStarWars'
 import NotFound from './pages/NotFound'
-import CharactersPage from './pages/CharactersPage'
+//import CharactersPage from './pages/CharactersPage'
 //import CharacterPage from './pages/CharacterPage'
 import FilmsPage from './pages/FilmsPage'
 import FilmPage from './pages/FilmPage'
@@ -25,7 +25,7 @@ const App = () => {
 				<Routes> {/* Omsluter route med routes, lägger en path med det ewlement som ska renderas när sökvägen är / */}
 					<Route path="/" element={<HomePage />} /> 
 				{/*	<Route path="/search" element={<SearchStarWars />} />  lägger en path med det ewlement som ska renderas när sökvägen är /search */}
-					<Route path="/characters" element={<CharactersPage />} /> {/* lägger en path med det ewlement som ska renderas när sökvägen är /characters */} 
+				{/*	<Route path="/characters" element={<CharactersPage />} /> {/* lägger en path med det ewlement som ska renderas när sökvägen är /characters */} 
 				{/*	<Route path="/characters/:id" element={<CharacterPage />} /> *vill komma åt mer info när vi trycker på en person. Så vi skriver element ={} så vi renderar CharactersPage vars uppgift ska vara att hämta en enskild person*/}
 					<Route path="/films" element={<FilmsPage />} />
 					<Route path="/films/:id" element={<FilmPage />} /> 
