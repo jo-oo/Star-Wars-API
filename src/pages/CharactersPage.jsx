@@ -50,7 +50,7 @@ const CharactersPage = () => {
 								<Card.Text>Born {characters.birth_year} </Card.Text>
 								<Card.Text>In {characters.films.length} films </Card.Text>
 								<Card.Body>
-									{/*<Button variant="primary" as={Link} to={`/characters/${getIdFromUrl(characters.url)}`}>More info about this character</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
+									<Button variant="primary" as={Link} to={`/characters/${getIdFromUrl(characters.url)}`}>More info about this character</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
 								</Card.Body> 
 							</Card.Body>
 						</Card>
