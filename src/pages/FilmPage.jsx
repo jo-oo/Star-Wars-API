@@ -37,7 +37,7 @@ const FilmPage = () => {
     <>
     	<Row xs={1} md={3} className="g-4">
 
-      	<h1>Films</h1>
+      	<h1>Film info</h1>
 
       	{film && ( 
         	<Col key={film.episode_id}>
@@ -53,15 +53,18 @@ const FilmPage = () => {
 
                         <Card.Body>
                             <Card.Title>Links</Card.Title>
-                            <Card.Title>Characters</Card.Title>
+                            <Card.Text>Characters</Card.Text>
                             <Button variant="primary" as={Link} to={`/films/${film.episode_id}`}>More</Button>
                         </Card.Body>
 
                         {characters.map((characters) => ( 
                             <Col>
-                                <Card className="card">
-                                    <Card.Header>Character {`${getIdFromUrl(characters)}`}</Card.Header>
-							    </Card>
+							    <Card className="card">
+                                    <Link key={getIdFromUrl(characters)}
+										to={`/characters/${getIdFromUrl(characters)}`}> 
+                                        <Card.Header>Character {`${getIdFromUrl(characters)}`}</Card.Header>
+                                    </Link>
+                                </Card>
                             </Col>
         	            ))}		   
             		</Card>

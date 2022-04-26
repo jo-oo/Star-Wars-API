@@ -63,8 +63,11 @@ const CharacterPage = () => {
                         {films.map((films) => ( 
                             <Col>
                                 <Card className="card">
-                                    <Card.Header>Film {`${getIdFromUrl(films)}`}</Card.Header>
-							    </Card>
+                                    <Link key={getIdFromUrl(films)}
+										to={`/films/${getIdFromUrl(films)}`}> 
+                                        <Card.Header>Film {`${getIdFromUrl(films)}`}</Card.Header>
+                                    </Link>
+                                </Card>
                             </Col>
         	            ))}		   
             		</Card>
