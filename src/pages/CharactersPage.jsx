@@ -46,11 +46,11 @@ const CharactersPage = () => {
 						<Card className="card">
 							<Card.Header as="h5">{characters.name}</Card.Header>{/*outprints characters name */}
 							<Card.Body>
-								{/*<Card.Text>Gender {`${getIdFromUrl(characters.films)}`} </Card.Text>*/}
-								{/*<Card.Text>Born {characters.release_date} </Card.Text>/*}
-								{/*<Card.Text>In {`${getIdFromUrl(characters.films)}`} films </Card.Text>*/}
+								<Card.Text>Gender {characters.gender} </Card.Text>
+								<Card.Text>Born {characters.birth_year} </Card.Text>
+								<Card.Text>In {characters.films.length} films </Card.Text>
 								<Card.Body>
-									{/*<Button variant="primary" as={Link} to={`/films/${getIdFromUrl(films.url)}`}>More info about the film</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
+									{/*<Button variant="primary" as={Link} to={`/characters/${getIdFromUrl(characters.url)}`}>More info about this character</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
 								</Card.Body> 
 							</Card.Body>
 						</Card>
@@ -61,7 +61,6 @@ const CharactersPage = () => {
 	)
 }
 
-//{films.characters.length}
 
 export default CharactersPage
 
