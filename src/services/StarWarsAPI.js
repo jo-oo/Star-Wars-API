@@ -30,14 +30,14 @@ const getFilm = async (id) => {
 
 //get characters from API
 const getCharacters = async () => {
-		const response = await axios.get(`${BaseURL}/characters`)
+		const response = await axios.get(`${BaseURL}/people`)
 
 		return response.data
 }
 
 //Get single character
 const getCharacter = async (id) => {
-    const response = await axios.get(`${BaseURL}/characters/${id}`)
+    const response = await axios.get(`${BaseURL}/people/${id}`)
     return response.data
 }
 
