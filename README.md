@@ -1,6 +1,6 @@
 # This is a app that communicates with the SWAPI API (aka Star Wars API)
 
-Visit this page to check it out! [https://star-wars-API-wiki.netlify.app/](https://star-wars-API.netlify.app/)
+Visit this page to check it out! [https://star-wars-API.netlify.app/](https://star-wars-API.netlify.app/)
 
 Built with React using [SWAPI](https://swapi.dev/) (Star Wars API)
 
