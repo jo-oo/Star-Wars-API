@@ -10,6 +10,7 @@ import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartäre
 
 const FilmsPage = () => {
   const [films, setFilms] = useState("") //sätter listan till tom från början
+  const [page, setPage] = useState(0) //sätter sidnumret till 0
   	
 	const getFilms = async () => {
 		// Get films from api
@@ -50,10 +51,13 @@ const FilmsPage = () => {
         	))}
         </Row>
 		<div className="d-flex justify-content-between align-items-center mt-4">
-			<Button disabled="true"> {/*disabled so it can´t be clicked*/}
+			<Button className="previous"
+					disabled={page === 0} //disabled so it can´t be clicked when page is number 0
+					>
 				Previous
 			</Button>
-			<Button>
+			<div>PAGE NR {page + 1}</div> {/* sets page number to be value of page + 1 */}
+			<Button className="next">
 				Next
 			</Button>
 		</div>
