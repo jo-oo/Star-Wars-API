@@ -5,9 +5,11 @@ import StarWarsAPI from '../services/StarWarsAPI'
 import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
+import { useNavigate } from "react-router-dom" //for navigation back and forth
 
 
 const CharacterPage = () => {
+    const navigate = useNavigate() //sets the navigation into a variable
     const [character, setCharacter] = useState() //inget state från början
     const { id } = useParams() //en React-funktion som hämtar id
     const [ films, setFilms] = useState([]) //empty array for films
@@ -74,6 +76,7 @@ const CharacterPage = () => {
         	</Col>
         	)}
         </Row>
+        <Button variant="secondary" onClick={() => navigate(-1)}>« Back</Button>
     </>
   );
 }
