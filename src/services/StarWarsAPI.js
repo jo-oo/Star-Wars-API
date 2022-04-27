@@ -42,6 +42,13 @@ const getCharactersPage = async (page) => {
     return response.data
 }
 
+//get new page of films from API. The page number we send in is a variable
+const getFilmsPage = async (page) => {
+    const response = await axios.get(`${BaseURL}/films/?page=${page}`)
+
+    return response.data
+}
+
 //Get single character
 const getCharacter = async (id) => {
     const response = await axios.get(`${BaseURL}/people/${id}`)
@@ -70,6 +77,7 @@ const getCharacter = async (id) => {
     getFilm,
 	getCharacters,
     getCharacter,
-    getCharactersPage
+    getCharactersPage,
+    getFilmsPage
 	//search,
 }
