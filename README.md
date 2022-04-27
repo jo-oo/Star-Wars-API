@@ -18,6 +18,7 @@ Built with React using [SWAPI](https://swapi.dev/) (Star Wars API)
 
 An encyclopedia of the Star Wars Galaxy where you can find alla films and characters and get more info about each one of them.
 When looking at a character you should be able to go straight to the films the characters been in and vice versa.
+Pagination required to click through several pages of films and characters.
 
 #### Requirement
 
