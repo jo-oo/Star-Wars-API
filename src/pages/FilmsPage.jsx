@@ -6,6 +6,7 @@ import StarWarsAPI from '../services/StarWarsAPI'
 import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
+import Spinner from 'react-bootstrap/Spinner'
 //import { useSearchParams } from 'react-router-dom' //för att kunna lagra en förfrågan i en URLSearchParams.
 
 
@@ -68,7 +69,7 @@ const FilmsPage = () => {
         	</Col>
         	))}
         </Row>
-		
+
 		<div className="d-flex justify-content-between align-items-center mt-4">
 			<Button className="previous"
 				disabled={!films.previous || loading} //disabled so it can´t be clicked when characters don´t have a previous value (null) OR when the page is still loading (to avoid discrepency/unsync of displayed page and number of page)
@@ -76,11 +77,14 @@ const FilmsPage = () => {
 				>
 				Previous Page
 			</Button>
-			{loading &&
-        	<h2>
-          	Loading ...
-        	</h2>
-     		}
+
+			{/* loading spinner */}
+			{loading && (<div className="mt-4">
+			<Spinner animation="border" role="status">
+ 				<span className="visually-hidden">Loading...</span>
+			</Spinner></div>)}
+
+
 			<div>{page} / {Math.ceil(films.count/10)} </div> {/* sets page number to be value of page out of number of pages in the API for characters */ }
 			<Button className="next"
 				disabled={!films.next || loading } //disabled so it can´t be clicked when characters don´t have a next value (null) or when page is still loading
