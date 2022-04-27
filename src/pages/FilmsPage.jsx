@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+//import { useSearchParams } from 'react-router-dom' //används till Params för att kunna trycka fram o tillbaka på sidan
 import StarWarsAPI from '../services/StarWarsAPI'
 //import ListGroup from 'react-bootstrap/listgroup'
 import { Card, Row, Col } from 'react-bootstrap'
@@ -9,8 +10,7 @@ import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartäre
 
 const FilmsPage = () => {
   const [films, setFilms] = useState("") //sätter listan till tom från början
-
-	
+  	
 	const getFilms = async () => {
 		// Get films from api
 		const data = await StarWarsAPI.getFilms()
@@ -49,6 +49,14 @@ const FilmsPage = () => {
         	</Col>
         	))}
         </Row>
+		<div className="d-flex justify-content-between align-items-center mt-4">
+			<Button disabled="true"> {/*disabled so it can´t be clicked*/}
+				Previous
+			</Button>
+			<Button>
+				Next
+			</Button>
+		</div>
     </>
   );
 }

@@ -57,6 +57,14 @@ const CharactersPage = () => {
 					</Col>
 				))}
 	  		</Row>
+			<div className="d-flex justify-content-between align-items-center mt-4">
+				<Button disabled="true"> {/*disabled so it can´t be clicked*/}
+					Previous
+				</Button>
+				<Button>
+					Next
+				</Button>
+			</div>
 		</> 
 	)
 }
