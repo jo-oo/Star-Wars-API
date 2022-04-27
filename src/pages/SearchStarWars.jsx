@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import Spinner from 'react-bootstrap/Spinner'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 const SearchStarWars = () => {
 	const [searchInput, setSearchInput] = useState('')
+	const [loading, setLoading] = useState(true)
 
 	const handleSubmit = async e => {
 		e.preventDefault()
@@ -33,6 +35,11 @@ const SearchStarWars = () => {
 				</div>
 			</Form>
 
+			{/* loading spinner */}
+			{loading && (<div className="mt-4">
+			<Spinner animation="border" role="status">
+ 				<span className="visually-hidden">Loading...</span>
+			</Spinner></div>)}
 
 			{(
 				<div className="search-result mt-4">
