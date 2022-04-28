@@ -25,7 +25,6 @@ const FilmsPage = () => {
 		console.log("Set page is this: ", page);
 		const data = await StarWarsAPI.getFilmsPage(page) //gets films only from page 1 as start and then the value of page
 		
-		
 		// update films state
 		setFilms(data)
 		setLoading(false) 
@@ -39,62 +38,64 @@ const FilmsPage = () => {
 
 
 	//Here is what we ouput on our page
-  return (
-    <>
-    	<Row xs={1} md={3} className="g-4">
+  	return (
+    	<>
+			<h1>Films</h1>
 
-      	<h1>Films</h1>
+			<Row xs={1} md={3} className="g-4">
 
-		{loading &&
-        <h2>
-    	Loading ...
-        </h2>
-     	}
+			{loading &&
+			<h2>
+			Loading ...
+			</h2>
+			}
 
-		{loading}
+			{loading}
 
-      	{films && films.results.map((films) => ( //mappar över films-array. finns det filmer så skriver den ut följande
-        	<Col key={films.episode_id}>
-          		<Card className="card">
-           			<Card.Header as="h5">{films.title}</Card.Header>
-          			<Card.Body>
-            			<Card.Text>Episode {films.episode_id} </Card.Text>
-            			<Card.Text>Released {films.release_date} </Card.Text>
-						<Card.Text>{films.characters.length} Characters </Card.Text>
+			{films && films.results.map((films) => ( //mappar över films-array. finns det filmer så skriver den ut följande
+				<Col key={films.episode_id}>
+					<Card className="card">
+						<Card.Header as="h5">{films.title}</Card.Header>
 						<Card.Body>
-							<Button variant="primary" as={Link} to={`/films/${getIdFromUrl(films.url)}`}>More info about the film</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
-						</Card.Body> 
-           			</Card.Body>
-            	</Card>
-        	</Col>
-        	))}
-        </Row>
+							<Card.Text> <b>Episodes:</b> {films.episode_id} </Card.Text>
+							<Card.Text><b>Released:</b>  {films.release_date} </Card.Text>
+							<Card.Text>{films.characters.length} Characters </Card.Text>
+							<Card.Body>
+								<Button variant="outline-warning" as={Link} to={`/films/${getIdFromUrl(films.url)}`}>More info</Button> {/* hämtar ut filmens url för att använda helper.funktionen på för att spliytta ut id:et. Pga att episodens id/nr är ejk samma som id på url:en*/}
+							</Card.Body> 
+						</Card.Body>
+					</Card>
+				</Col>
+				))}
+			</Row>
 
-		<div className="d-flex justify-content-between align-items-center mt-4">
-			<Button className="previous"
-				disabled={!films.previous || loading} //disabled so it can´t be clicked when characters don´t have a previous value (null) OR when the page is still loading (to avoid discrepency/unsync of displayed page and number of page)
-				onClick={() => setPage(page - 1)}
-				>
-				Previous Page
-			</Button>
+			<div className="d-flex justify-content-between align-items-center mt-4">
+				<Button className="previous"
+					variant="outline-warning"
+					disabled={!films.previous || loading} //disabled so it can´t be clicked when characters don´t have a previous value (null) OR when the page is still loading (to avoid discrepency/unsync of displayed page and number of page)
+					onClick={() => setPage(page - 1)}
+					>
+					Previous Page
+				</Button>
 
-			{/* loading spinner */}
-			{loading && (<div className="mt-4">
-			<Spinner animation="border" role="status">
- 				<span className="visually-hidden">Loading...</span>
-			</Spinner></div>)}
+				{/* loading spinner */}
+				{loading && (<div className="mt-4">
+				<Spinner animation="border" role="status" variant="light">
+					<span className="visually-hidden">Loading...</span>
+				</Spinner></div>)}
 
 
-			<div>{page} / {Math.ceil(films.count/10)} </div> {/* sets page number to be value of page out of number of pages in the API for characters */ }
-			<Button className="next"
-				disabled={!films.next || loading } //disabled so it can´t be clicked when characters don´t have a next value (null) or when page is still loading
-				onClick={() => setPage(page + 1)} 
-				>
-				Next Page
-			</Button>
-		</div>
-    </>
-  );
+				<div class="text-white">{page} / {Math.ceil(films.count/10)} </div> {/* sets page number to be value of page out of number of pages in the API for characters */ }
+				<Button className="next" 
+					variant="outline-warning"
+					disabled={!films.next || loading } //disabled so it can´t be clicked when characters don´t have a next value (null) or when page is still loading
+					onClick={() => setPage(page + 1)} 
+					>
+					Next Page
+				</Button>
+			</div>
+    	</>
+  	);
 }
 
 

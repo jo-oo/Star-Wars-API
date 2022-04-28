@@ -38,20 +38,20 @@ const FilmPage = () => {
    //MAPPA INTE FGILMS UTAN SKRIV BARA UT. MAPPA CHARACTERS
 	return (
     <>
-    	<Row xs={1} md={3} className="g-4">
+		<h1>Film info</h1>
 
-      	<h1>Film info</h1>
+    	<Row xs={1} md={3} className="g-4">
 
       	{film && ( 
         	<Col key={film.episode_id}>
           		<Card className="card">
            			<Card.Header as="h5">{film.title}</Card.Header>
           				<Card.Body>
-                            <Card.Title>Attributes</Card.Title>
-            				<Card.Text>Episode {film.episode_id} </Card.Text>
-            				<Card.Text>Director {film.director} </Card.Text>
-                            <Card.Text>Producer {film.producer} </Card.Text>
-                            <Card.Text>Release date {film.release_date} </Card.Text>
+                            <Card.Title><b>Attributes:</b></Card.Title>
+            				<Card.Text><b>Episode:</b> {film.episode_id} </Card.Text>
+            				<Card.Text><b>Director:</b> {film.director} </Card.Text>
+                            <Card.Text><b>Producer:</b> {film.producer} </Card.Text>
+                            <Card.Text><b>Release date:</b> {film.release_date} </Card.Text>
            				</Card.Body>
 
                         <Card.Body>
