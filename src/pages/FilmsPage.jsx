@@ -7,6 +7,7 @@ import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
 import Spinner from 'react-bootstrap/Spinner'
+import Pagination from '../components/Pagination'
 //import { useSearchParams } from 'react-router-dom' //för att kunna lagra en förfrågan i en URLSearchParams.
 
 
@@ -68,32 +69,15 @@ const FilmsPage = () => {
 				</Col>
 				))}
 			</Row>
-
-			<div className="d-flex justify-content-between align-items-center mt-4">
-				<Button className="previous"
-					variant="outline-warning"
-					disabled={!films.previous || loading} //disabled so it can´t be clicked when characters don´t have a previous value (null) OR when the page is still loading (to avoid discrepency/unsync of displayed page and number of page)
-					onClick={() => setPage(page - 1)}
-					>
-					Previous Page
-				</Button>
-
-				{/* loading spinner */}
-				{loading && (<div className="mt-4">
-				<Spinner animation="border" role="status" variant="light">
-					<span className="visually-hidden">Loading...</span>
-				</Spinner></div>)}
-
-
-				<div class="text-white">{page} / {Math.ceil(films.count/10)} </div> {/* sets page number to be value of page out of number of pages in the API for characters */ }
-				<Button className="next" 
-					variant="outline-warning"
-					disabled={!films.next || loading } //disabled so it can´t be clicked when characters don´t have a next value (null) or when page is still loading
-					onClick={() => setPage(page + 1)} 
-					>
-					Next Page
-				</Button>
-			</div>
+			
+			<Pagination 
+				data={films}
+				loading={loading}
+				page={page}
+				setPage={setPage}
+				Spinner={Spinner}
+			>
+			</Pagination>	
     	</>
   	);
 }
