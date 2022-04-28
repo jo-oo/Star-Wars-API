@@ -1,7 +1,3 @@
-import Container from 'react-bootstrap/Container'//importerar container som omsluter Navbaren
-import Navbar from 'react-bootstrap/Navbar' //importerar Navbar från React Bootstraqp så vi kan använda den här
-import Nav from 'react-bootstrap/Nav'//importerar
-import { Link, NavLink } from 'react-router-dom' //NavLink gör att länken får en klass som heter Active så nöär du är inne på en roiute så får den klassen aktiv. = blir ljusblå riunt. Lägger den inte runt första aidan för den ska inte vara upplyst det är inte fint
 import Button from 'react-bootstrap/Button'
 
 //tar in data & page in i komponenten
