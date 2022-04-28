@@ -6,6 +6,7 @@ import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
 import { useNavigate } from "react-router-dom" //for navigation back and forth
+import ReturnButton from '../components/ReturnButton'
 
 
 const CharacterPage = () => {
@@ -47,14 +48,14 @@ const CharacterPage = () => {
           		<Card className="card">
            			<Card.Header as="h5">{character.name}</Card.Header>
           				<Card.Body>
-                            <Card.Title>Attributes</Card.Title>
-                            <Card.Text>Gender {character.gender} </Card.Text>
-							<Card.Text>Birth year {character.birth_year} </Card.Text>
-                            <Card.Text>Height {character.height} </Card.Text>
-                            <Card.Text>Mass {character.mass} kg </Card.Text>
-                            <Card.Text>Hair colour {character.hair_color} </Card.Text>
-                            <Card.Text>Skin colour {character.skin_color} </Card.Text>
-                            <Card.Text>Eye colour {character.eye_color} </Card.Text>
+                            <Card.Title><b>Attributes:</b></Card.Title>
+                            <Card.Text><b>Gender:</b> {character.gender} </Card.Text>
+							<Card.Text><b>Birth year:</b> {character.birth_year} </Card.Text>
+                            <Card.Text><b>Height:</b> {character.height} </Card.Text>
+                            <Card.Text><b>Mass:</b> {character.mass} kg </Card.Text>
+                            <Card.Text><b>Hair colour:</b> {character.hair_color} </Card.Text>
+                            <Card.Text><b>Skin colour:</b> {character.skin_color} </Card.Text>
+                            <Card.Text><b>Eye colour:</b> {character.eye_color} </Card.Text>
            				</Card.Body>
 
                         <Card.Body>
@@ -76,7 +77,10 @@ const CharacterPage = () => {
         	</Col>
         	)}
         </Row>
-        <Button variant="secondary" onClick={() => navigate(-1)}>« Back</Button>
+        <ReturnButton
+		navigate={navigate}
+		>
+		</ReturnButton>
     </>
   );
 }

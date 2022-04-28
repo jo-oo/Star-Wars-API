@@ -6,6 +6,7 @@ import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
 import { useNavigate } from "react-router-dom" //for navigation back and forth
+import ReturnButton from '../components/ReturnButton'
 
 
 
@@ -73,7 +74,10 @@ const FilmPage = () => {
         	</Col>
         	)}
         </Row>
-		<Button variant="secondary" onClick={() => navigate(-1)}>« Back</Button>
+		<ReturnButton
+		navigate={navigate}
+		>
+		</ReturnButton>
     </>
   );
 }
