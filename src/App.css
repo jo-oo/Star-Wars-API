@@ -2,14 +2,16 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.75em;
 }
 
+h1, h2 {
+    color: white;
+}
+
 body{
-   /* background-image: url('http://i.stack.imgur.com/kx8MT.gif');/*
-	/*background-image: url('https://tenor.com/view/falling-stars-galaxy-sparkling-night-sky-gif-16873435');*/
+   /*background-image: url('http://i.stack.imgur.com/kx8MT.gif');*/
+    background-image: url('https://acegif.com/wp-content/gifs/starfall-gif-70.gif');
+	/*background-image: url('https://acegif.com/wp-content/gifs/starfall-gif-22.gif');*/
     background-size: cover;
-    
-    
-    
     height: 100vh;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
