@@ -11,7 +11,6 @@ const Navigation = () => {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" /> {/*toggle dropdowmn or not*/}
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ms-auto">
-						<Nav.Link as={NavLink} end to="/search">Star Search</Nav.Link>
 						<Nav.Link as={NavLink} to="/characters" end>Characters</Nav.Link> {/*"end" to stop shining when not at link */}
 						<Nav.Link as={NavLink} to="/films" end>Films</Nav.Link>
 					</Nav>
