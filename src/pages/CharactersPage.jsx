@@ -13,23 +13,25 @@ const CharactersPage = () => {
 	const [page, setPage] = useState(1) //sets page number to 1
 	const [loading, setLoading] = useState(false) //to be able to wait for data loading from api
   
-	const getCharacters = async () => {
 
-		// set loading to true
-		setLoading(true)
-
-		// Get characters from api
-		console.log("Set page is this: ", page);
-		const data = await StarWarsAPI.getCharactersPage(page) //gets characters only from page 1 as start and then the value of page
-	
-		// update characters state
-		setCharacters(data)
-		setLoading(false) 
-	}
 
 	// Get characters page from api when component is first mounted
 	useEffect(() => {
+		const getCharacters = async () => {
+
+			// set loading to true
+			setLoading(true)
+	
+			// Get characters from api
+			console.log("Set page is this: ", page);
+			const data = await StarWarsAPI.getCharactersPage(page) //gets characters only from page 1 as start and then the value of page
+		
+			// update characters state
+			setCharacters(data)
+			setLoading(false) 
+		}
 		getCharacters(page)
+
 	}, [page])
 
 
