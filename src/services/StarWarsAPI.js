@@ -58,13 +58,6 @@ const getFilmsPage = async (page) => {
 }
 
 
-//Search Star Wars API
-const search = async (query) => {
-    const response = await axios.get(`${BaseURL}/people/?search=${query}`)
-    return response.data
-}
-
-
  export default {
 	getFilms,
     getFilm,
@@ -72,5 +65,4 @@ const search = async (query) => {
     getCharacter,
     getCharactersPage,
     getFilmsPage,
-	search,
 }
