@@ -28,12 +28,20 @@ const getFilm = async (id) => {
     return response.data
 }
 
+
 //get characters from API
 const getCharacters = async () => {
 		const response = await axios.get(`${BaseURL}/people`)
 
 		return response.data
 }
+
+//Get single character
+const getCharacter = async (id) => {
+    const response = await axios.get(`${BaseURL}/people/${id}`)
+    return response.data
+}
+
 
 //get new page of characters from API. The page number we send in is a variable
 const getCharactersPage = async (page) => {
@@ -49,28 +57,13 @@ const getFilmsPage = async (page) => {
     return response.data
 }
 
-//Get single character
-const getCharacter = async (id) => {
-    const response = await axios.get(`${BaseURL}/people/${id}`)
+
+//Search Star Wars API
+const search = async (query) => {
+    const response = await axios.get(`${BaseURL}/people/?search=${query}`)
     return response.data
 }
 
-
- 
-
-
- /**
-  * Search Star Wars API
-  *
-  * @param {string} query Search query to search for
-  * @param {number} page Page of search results to get
-  * @returns Promise
-  */
- /*
- export const search = async (query, page) => {
-     return get(`/search?query=${query}&tags=story&page=${page}`)
- }
- */
 
  export default {
 	getFilms,
@@ -78,6 +71,6 @@ const getCharacter = async (id) => {
 	getCharacters,
     getCharacter,
     getCharactersPage,
-    getFilmsPage
-	//search,
+    getFilmsPage,
+	search,
 }
