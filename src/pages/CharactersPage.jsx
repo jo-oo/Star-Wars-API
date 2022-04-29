@@ -56,7 +56,7 @@ const CharactersPage = () => {
 						<Card className="card">
 							<Card.Header as="h5">{characters.name}</Card.Header>{/*outprints characters name */}
 							<Card.Body>
-								<Card.Text class="text-dark"><b>Gender:</b> {characters.gender} </Card.Text>
+								<Card.Text><b>Gender:</b> {characters.gender} </Card.Text>
 								<Card.Text><b>Born:</b> {characters.birth_year} </Card.Text>
 								<Card.Text><b>In:</b> {characters.films.length} films </Card.Text>
 								<Card.Body>
