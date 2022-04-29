@@ -52,7 +52,7 @@ const CharactersPage = () => {
 				{loading}
 			
 				{characters && characters.results.map((characters) => ( //mappar över characters-array. finns det charactaers så skriver den ut följande
-					<Col> {/*key={films.episode_id}*/}
+					<Col key={characters.name}>
 						<Card className="card">
 							<Card.Header as="h5">{characters.name}</Card.Header>{/*outprints characters name */}
 							<Card.Body>
