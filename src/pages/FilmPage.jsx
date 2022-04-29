@@ -35,7 +35,7 @@ const FilmPage = () => {
 		<>
 			<h1>Film info</h1>
 
-			<Row xs={1} md={3} className="g-4">
+			<Row xs={1} md={1} className="g-4">
 
 				{film && ( 
 					<Col key={film.episode_id}>
