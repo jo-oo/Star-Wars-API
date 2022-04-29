@@ -28,7 +28,7 @@ Pagination required to click through several pages of films and characters.
 
 #### Time limit
 
-- 1,5 days
+- 2,5 days
 
 ## Tools
 

@@ -1,23 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-//import { useSearchParams } from 'react-router-dom' //används till Params för att kunna trycka fram o tillbaka på sidan
-import StarWarsAPI from '../services/StarWarsAPI'
-//import ListGroup from 'react-bootstrap/listgroup'
+import Spinner from 'react-bootstrap/Spinner'
 import { Card, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
-import { getIdFromUrl } from "../helpers/index" //hämtar id:et från kakartärerna
-import Spinner from 'react-bootstrap/Spinner'
-//import { useSearchParams } from 'react-router-dom' //för att kunna lagra en förfrågan i en URLSearchParams.
-
-//import SearchBar from '../../components/SearchBar'
+import StarWarsAPI from '../services/StarWarsAPI'
+import { getIdFromUrl } from "../helpers/index" //gets id from characters
 import Pagination from '../components/Pagination'
 
-const CharactersPage = () => {
-  const [characters, setCharacters] = useState("") //sets lists initial state to empty string
-  const [page, setPage] = useState(1) //sets page number to 1
-  const [loading, setLoading] = useState(false) //så vi ska hinna vänta in API:et
-  
 
+const CharactersPage = () => {
+	const [characters, setCharacters] = useState("") //sets lists initial state to empty string
+	const [page, setPage] = useState(1) //sets page number to 1
+	const [loading, setLoading] = useState(false) //to be able to wait for data loading from api
+  
 	const getCharacters = async () => {
 
 		// set loading to true
@@ -30,10 +25,9 @@ const CharactersPage = () => {
 		// update characters state
 		setCharacters(data)
 		setLoading(false) 
-		console.log(data);
 	}
 
-	// Get characters from api when component is first mounted
+	// Get characters page from api when component is first mounted
 	useEffect(() => {
 		getCharacters(page)
 	}, [page])
@@ -41,8 +35,8 @@ const CharactersPage = () => {
 
 	//Here is what we ouput on our page
 	return (
-		<> {/*using a Fragment as a container*/}
-			
+		<> 
+
 			<h1>Characters</h1>
 
 			<Row xs={1} md={3} className="g-4">
@@ -58,7 +52,7 @@ const CharactersPage = () => {
 				{characters && characters.results.map((characters) => ( //mappar över characters-array. finns det charactaers så skriver den ut följande
 					<Col> {/*key={films.episode_id}*/}
 						<Card className="card">
-							<Card.Header bg="yellow" as="h5">{characters.name}</Card.Header>{/*outprints characters name */}
+							<Card.Header as="h5">{characters.name}</Card.Header>{/*outprints characters name */}
 							<Card.Body>
 								<Card.Text class="text-dark"><b>Gender:</b> {characters.gender} </Card.Text>
 								<Card.Text><b>Born:</b> {characters.birth_year} </Card.Text>
@@ -80,6 +74,7 @@ const CharactersPage = () => {
 				Spinner={Spinner}
 			>
 			</Pagination>
+			
 		</> 
 	)
 }

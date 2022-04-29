@@ -1,9 +1,3 @@
-//detta är vår HEM-ROUTE
-
-import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
-import Card from 'react-bootstrap/Card'
-
 const HomePage = () => {
 	return (
 		<>
@@ -13,11 +7,6 @@ const HomePage = () => {
 
 			<h2>✨ 🌟  ✨  🌟  ✨ 🌟  ✨ 🌟 ✨ 🌟  ✨ 🌟 ✨ 🌟  ✨ 🌟 ✨ 🌟  ✨ 🌟 ✨</h2>
 
-			<Button variant="primary" as={Link} to="/search">Use the Search, you must</Button>
-
-			{/* skapa en länk */}
-			{/*  <p>This link does not exist: <Link to="/not-found">Click here</Link></p>  */}
-		
 		</>
 	)
 }

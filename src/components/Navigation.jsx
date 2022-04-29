@@ -1,21 +1,18 @@
-import Container from 'react-bootstrap/Container'//importerar container som omsluter Navbaren
-import Navbar from 'react-bootstrap/Navbar' //importerar Navbar från React Bootstraqp så vi kan använda den här
-import Nav from 'react-bootstrap/Nav'//importerar
-import { Link, NavLink } from 'react-router-dom' //NavLink gör att länken får en klass som heter Active så nöär du är inne på en roiute så får den klassen aktiv. = blir ljusblå riunt. Lägger den inte runt första aidan för den ska inte vara upplyst det är inte fint
+import Container from 'react-bootstrap/Container'//import container that wraps the Navbar
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import { Link, NavLink } from 'react-router-dom' //NavLink gives the link a class of Active = turns light when active
 
-
-//lägg in Bootstratp Navbar. (kan kopiera från Bootstrap.com)
 const Navigation = () => {
 	return (
-		<Navbar bg="dark" variant="dark" expand="md">{/* slutar visa Navbar fr.o.m medium breakpoint. Visar dropdwon meny*/}
+		<Navbar bg="dark" variant="dark" expand="md">{/*stop showing Navbar from medium breakpoint. Shows dropdwon menue*/}
 			<Container>
-				<Navbar.Brand as={Link} to="/">Star Wars Galaxy</Navbar.Brand>{/*titeln på appen. Säger aqtt den ska renderas som en Link. Så när dy trycker på hem-knappen så kommer du till todos-listan better todos */}	
-																	{/*vi vill använda länkar fgör att inte ladda om sidan varje gång */}
-				<Navbar.Toggle aria-controls="basic-navbar-nav" /> {/* togglar om den ska vara dropdowmn eller ej*/}
-				<Navbar.Collapse id="basic-navbar-nav">{/**toggle styr collapsen*/}
-					<Nav className="ms-auto">{/**ms start auto = auto margin vänster*/}
+				<Navbar.Brand as={Link} to="/">Star Wars Galaxy</Navbar.Brand>{/*App title. Rendered like a link. Page then don´t need to reload every time */}	
+				<Navbar.Toggle aria-controls="basic-navbar-nav" /> {/*toggle dropdowmn or not*/}
+				<Navbar.Collapse id="basic-navbar-nav">
+					<Nav className="ms-auto">
 						<Nav.Link as={NavLink} end to="/search">Star Search</Nav.Link>
-						<Nav.Link as={NavLink} to="/characters" end>Characters</Nav.Link> {/*Vi klan använda NavLink för att highlighta bara när du är inne på den länken. Slriv "end" för att sluta lysa när fu inte ä inne på länken längre */}
+						<Nav.Link as={NavLink} to="/characters" end>Characters</Nav.Link> {/*"end" to stop shining when not at link */}
 						<Nav.Link as={NavLink} to="/films" end>Films</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

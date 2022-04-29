@@ -1,14 +1,13 @@
 import Button from 'react-bootstrap/Button'
 
-//tar in data & page in i komponenten
+//takes, page, loading etc. into component
 const Pagination = ( { data, loading, page, setPage, Spinner } ) => {
 	return ( 
         <> {/*using a Fragment as a container*/}
             <div className="d-flex justify-content-between align-items-center mt-4">
 				<Button className="previous"
 					variant="outline-warning"
-					//style={{ backgroundColor: "#00B1E1" }}
-					disabled={!data.previous || loading} //disabled so it can´t be clicked when characters don´t have a previous value (null) OR when the page is still loading (to avoid discrepency/unsync of displayed page and number of page)
+					disabled={!data.previous || loading} //disabled so it can´t be clicked when characters or films (data) don´t have a previous value (null) OR when the page is still loading (to avoid discrepency/unsync of displayed page and number of page)
 					onClick={() => setPage(page - 1)}
 					>
 					Previous Page
@@ -24,13 +23,12 @@ const Pagination = ( { data, loading, page, setPage, Spinner } ) => {
 				
 				<Button className="next"
 					variant="outline-warning"
-					disabled={!data.next || loading } //disabled so it can´t be clicked when characters don´t have a next value (null) or when page is still loading
+					disabled={!data.next || loading } //disabled so it can´t be clicked when characters or films (data) don´t have a next value (null) or when page is still loading
 					onClick={() => setPage(page + 1)} 
 					>
 					Next Page
 				</Button>
 			</div>
-
         </> 
 	)
 }
