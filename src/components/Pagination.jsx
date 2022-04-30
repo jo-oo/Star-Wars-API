@@ -19,7 +19,12 @@ const Pagination = ( { data, loading, page, setPage, Spinner } ) => {
  					<span className="visually-hidden">Loading...</span>
 				</Spinner></div>)}
 
-				<div className="text-white">{page} / {Math.ceil(data.count/10)} </div> {/* sets page number to be value of page out of number of pages in the API for characters */ }
+				{/* sets page number to be value of page out of number of pages in the API for characters/films. Also removes page x/x when loading */ }
+				<div className="text-white" 
+					hidden={loading}
+					>
+					{page} / {Math.ceil(data.count/10)} 
+				</div> 
 				
 				<Button className="next"
 					variant="outline-warning"
