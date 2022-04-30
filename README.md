@@ -22,9 +22,12 @@ Pagination required to click through several pages of films and characters.
 
 #### Requirement
 
-- React
-- React Router
-- Use Axios or Fetch for API
+- Use React Router
+- Use Axios for API
+- Services file for all API fetch
+- Use components
+- All resources should be clickable
+- Simple pagination
 
 #### Time limit
 
@@ -37,4 +40,4 @@ Pagination required to click through several pages of films and characters.
 
 ## Printscreen
 
-<img src="https://github.com/jo.......png" width=100%>
+<img src="https://github.com/jo-oo/Star-Wars-API/tree/main/src/assets/screenpront.png" width=100%>
