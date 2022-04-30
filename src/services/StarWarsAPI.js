@@ -4,15 +4,13 @@
  * <'https://swapi.dev/api'>
 */
 
-
 import axios from 'axios'
 
 //axios.defaults.baseURL = 'https://swapi.dev/api'
 const BaseURL = 'https://swapi.dev/api'
- 
 
 //Get all films
-  const getFilms = async () => {
+const getFilms = async () => {
 		const response = await axios.get(`${BaseURL}/films`)
 		return response.data
 }
@@ -47,8 +45,7 @@ const getFilmsPage = async (page) => {
     return response.data
 }
 
-
-export default {
+const exportedObject = {
 	getFilms,
     getFilm,
 	getCharacters,
@@ -56,3 +53,4 @@ export default {
     getCharactersPage,
     getFilmsPage,
 }
+export default exportedObject
