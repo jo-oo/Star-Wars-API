@@ -40,4 +40,4 @@ Pagination required to click through several pages of films and characters.
 
 ## Printscreen
 
-<img src="https://github.com/jo-oo/Star-Wars-API/tree/main/src/assets/screenprint.png" width=100%>
+<img src="https://github.com/jo-oo/Star-Wars-API/tree/main/src/assets/screenprint.png" width=50%>
