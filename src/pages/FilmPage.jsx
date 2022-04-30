@@ -51,7 +51,7 @@ const FilmPage = () => {
 
 							<Card.Body>
 								<Card.Title>Links</Card.Title>
-								<Card.Text>Characters</Card.Text>
+								<Card.Text><b>Characters</b></Card.Text>
 							</Card.Body>
 
 							{characters.map((characters) => ( 
