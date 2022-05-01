@@ -13,7 +13,6 @@ const FilmsPage = () => {
   const [page, setPage] = useState(1)  //sets page number to 1
   const [loading, setLoading] = useState(false) //to be able to wait for data loading from api
   	
-
 	// Get films page from api when component is first mounted.
 	useEffect(() => {
 		const getFilms = async () => {
@@ -74,7 +73,6 @@ const FilmsPage = () => {
 				Spinner={Spinner}
 			>
 			</Pagination>	
-			
     	</>
   	);
 }

@@ -12,8 +12,6 @@ const CharactersPage = () => {
 	const [characters, setCharacters] = useState("") //sets lists initial state to empty string
 	const [page, setPage] = useState(1) //sets page number to 1
 	const [loading, setLoading] = useState(false) //to be able to wait for data loading from api
-  
-
 
 	// Get characters page from api when component is first mounted
 	useEffect(() => {
@@ -38,7 +36,6 @@ const CharactersPage = () => {
 	//Here is what we ouput on our page
 	return (
 		<> 
-
 			<h1>Characters</h1>
 
 			<Row xs={1} md={3} className="g-4">
@@ -76,7 +73,6 @@ const CharactersPage = () => {
 				Spinner={Spinner}
 			>
 			</Pagination>
-			
 		</> 
 	)
 }
